@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Stroke Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="https://cdn.pixabay.com/photo/2016/09/28/12/59/human-heart-1700453_960_720.png" rel="icon">
+  <link href="https://cdn.pixabay.com/photo/2016/09/28/12/59/human-heart-1700453_960_720.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+  <link href="assets/css/glitcheffect.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: Dewi - v4.7.0
+  * Template URL: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top ">
+    <div class="container d-flex align-items-center justify-content-between">
+
+<!--      <a href="index.html" class="logo d-flex align-items-center"> <img src="assets/img/logo.png" alt=""> <span>Electric Zombies</span> </a>-->
+       <h1 class="glitch" data-text="Electric Zombies" style = "font-size: 32px;">Electric Zombies</h1>
+
+<!--       <h1 class="logo"><a href="index.html" class="logo d-flex align-items-center"><span>Electric Zombies</span> </a></h1> -->
+
+<!--      <h1 class="logo"><a href="index.html" class="logo d-flex align-items-center"> <img src="assets/img/logo.png" alt=""> <span>Electric Zombies</span> </a></h1>-->
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#datacleansing">DataCleansing</a></li>
+          <li><a class="nav-link scrollto " href="#portfolio">EDA</a></li>
+          <li><a class="nav-link scrollto " href="#timeline1">ML Models</a></li>
+          <li><a class="nav-link scrollto" href="#predict">Predictions</a></li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+        </ul>
+        <i class="bi bi-list mobile-nav-toggle"></i>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div class="hero-container" data-aos="fade-up" data-aos-delay="150">
+      <h1>Heart Stroke Prediction</h1>
+      <h2>A Machine Learning Product from the Electric Zombies</h2>
+      <div class="d-flex">
+        <a href="#about" class="btn-get-started scrollto">Know More</a>
+        <a href="https://www.youtube.com/watch?v=GQ0f7-ksmGI&ab_channel=CentersforDiseaseControlandPrevention%28CDC%29" class="glightbox btn-watch-video"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+      </div>
+      
+      
+      
+    </div>
+    
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section  class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row justify-content-end">
+          <div class="col-lg-11">
+            <div class="row justify-content-end">
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                   <i class="bi bi-stopwatch"></i>
+                  <p>
+                    Every
+                  </p>
+                  <span data-purecounter-start="0" data-purecounter-end="40" data-purecounter-duration="1" class="purecounter"></span>
+                  <p>seconds, someone in the United States has a stroke.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="bi bi-hourglass-split"></i>
+                  <p>
+                    Every
+                  </p>
+                <span data-purecounter-start="0" data-purecounter-end="4" data-purecounter-duration="1" class="purecounter"></span>
+                  <p>minutes, someone dies of stroke.</p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="ri-heart-pulse-fill"></i>
+                  <p>
+                    Every year, over
+                  </p>
+                  <span data-purecounter-start="0" data-purecounter-end="795000" data-purecounter-duration="1" class="purecounter"></span>
+                  <p>people in the United States have a stroke. </p>
+                </div>
+              </div>
+
+              <div class="col-lg-3 col-md-5 col-6 d-md-flex align-items-md-stretch">
+                <div class="count-box">
+                  <i class="ri-skull-2-fill"></i>
+                  <span data-purecounter-start="0" data-purecounter-end="1" data-purecounter-duration="1" class="purecounter"></span>
+                  <p>in 6 deaths from cardiovascular disease was due to stroke.</p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section><!-- End About Section -->
+
+    <section id="about" class="services section-bg">
+      
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>What is this project about ? </p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-md-6">
+            <div class="icon-box">
+              <i class="bi bi-info-circle"></i>
+              <h4><a href="#">What is our project?</a></h4>
+              <p>We created a predictive algorithm which receives input data about a user's medical history and general information, and then uses machine learning to predict if the user is likely or unlikely to experience a stroke in their lifetime.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-award"></i>
+              <h4><a href="#">What is our ultimate goal?</a></h4>
+              <p>Strokes are one of the leading causes of death in our world, and countless conditions put everyone at risk. Our goal is to warn the user about their likelihood of experiencing a stroke and provide further assistance.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-bar-chart"></i>
+              <h4><a href="#">What is our data set?</a></h4>
+              <p>The data set is a compilation of certain medical conditions and general attributes on an unknown patient, as well as the information on whether that specific person has suffered a stroke or not.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-file-binary"></i>
+              <h4><a href="#">Classification or Regression?</a></h4>
+              <p>Our problem is a classification problem due to the binary nature of our data. This is because we are predicting whether a person will be likely to have a stroke or not, which will have a binary value, due to the decision between alternatives.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="bi bi-card-checklist"></i>
+              <h4><a href="#">What does our MVP look like?</a></h4>
+              <p>Our MVP is a simple survey-format prediction site. We prompt the user to enter general information about their life and use that information to help predict whether the person is at risk to have a stroke.</p>
+            </div>
+          </div>
+          <div class="col-md-6 mt-4 mt-md-0">
+            <div class="icon-box">
+              <i class="ri-hand-heart-fill"></i>
+              <h4><a href="#">Why does this matter?</a></h4>
+              <p>Strokes cause as many as over 100,000 deaths each year. Being able to recognize the possible factors that could lead to an onset of a stroke in one's life would be extremely beneficial to avoid the potential damage of a stroke.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Services Section -->
+
+        <!-- ======= Services Section ======= -->
+    <section id="datacleansing" class="services section-bg">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Data Cleaning</h2>
+          <p>Why Data Cleaning ? </p>
+          <font>It is necessary that our data set be prepared and cleaned before any analysis can be run.</font>
+        </div>
+
+        <div class="container" data-aos="fade-up">
+
+        <div class="row">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1542903660-eedba2cda473?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="bi bi-file-earmark-x"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Removing Columns</a></h5>
+                <p class="card-text">There will be some data deemed extraneous due to their lack of contribution towards the output. These columns are therefore removed before data analysis, in order to streamline the data set and eliminate unnecessary data. We removed the "Residence Type" and "ID" columns, as we found their data did not correlate or had very minimal significance with the final stroke prediction result. </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1516259762381-22954d7d3ad2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=889&q=80" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="bi bi-trash"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Dealing with Null Values</a></h5>
+                <p class="card-text">Real life data, especially medical data, will never be 100% perfect. There may be gaps or blank values that must be dealt with before a model can train on the data. For example, we had null values in the body mass index section, which was handled by replacing those values with an imputed mean value. We also had gender values labeled "Other". To fix this issue, we simply eliminated the data points with the "Other" gender values.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
+            <div class="card">
+              <img src="https://images.unsplash.com/photo-1569396116180-210c182bedb8?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80" class="card-img-top" alt="...">
+              <div class="card-icon">
+                <i class="bi bi-file-earmark-binary"></i>
+              </div>
+              <div class="card-body">
+                <h5 class="card-title"><a href="">Encoding Categorical Data</a></h5>
+                <p class="card-text">As our data contains both numerical and categorical data, it is necessary to encode the categorical columns. This is because machine learning models only understand numerical data, and are unable to comprehend categorical data, which contains of objects. By encoding the categorical data, the values are encoded into zeros and ones, and therefore can be recognized by machine learning models.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+      </div>
+    </section><!-- End Services Section -->
+
+
+    <!-- ======= Features Section ======= -->
+    <section id="portfolio" class="features">
+      <div class="container" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Exploratory Data Analysis</h2>
+          <p>Why do we require EDA? </p>
+          <font >Exploratory data analysis (EDA) involves using statistics and visualizations to analyze and identify trends in data sets. Exploratory data analysis is essential for any business. It allows data scientists to analyze the data before coming to any assumption. It ensures that the results produced are valid and applicable to business outcomes and goals. It helps us identify errors, outliers, and relationships in the data.</font>
+        </div>
+
+        <ul class="nav nav-tabs row d-flex">
+          <li class="nav-item col-3">
+            <a class="nav-link active show" data-bs-toggle="tab" href="#tab-1">
+              <i class="ri-team-fill"></i>
+              <h4 class="d-none d-lg-block">Any Relation Between Age and Stroke ? </h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-2">
+              <i class="ri-body-scan-line"></i>
+              <h4 class="d-none d-lg-block">Any relation between smoking status and stroke ? </h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-3">
+              <i class="ri-sun-line"></i>
+              <h4 class="d-none d-lg-block">Is glucose level a factor in getting a stroke ? </h4>
+            </a>
+          </li>
+          <li class="nav-item col-3">
+            <a class="nav-link" data-bs-toggle="tab" href="#tab-4">
+                <i class="ri-user-heart-fill"></i>
+              <h4 class="d-none d-lg-block">Are individuals with prior heart disease at risk ? </h4>
+            </a>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <div class="tab-pane active show" id="tab-1">
+            <div class="row">
+              <div class="col-lg-4 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Does Stroke risk increase by age ? </h3>
+                <p class="fst-italic">
+                  What we observed from the plot
+                </p>
+                <ul>
+                  <li><i class="ri-check-double-line"></i> We can see that stroke risk increases as people get older</li>
+                  <li><i class="ri-check-double-line"></i> Stroke risk increases with age, but strokes can and do occur at any age.</li>
+                </ul>
+                <p>
+                    Even though age is a factor in the probability of getting a stroke,it all depends on your diet and physical activity.
+                </p>
+              </div>
+              <div class="col-lg-8 order-1 order-lg-2 text-center">
+<!--                <img src="assets/img/portfolio/plot3.html" alt="" class="img-fluid">-->
+                <object data="assets/img/portfolio/agevsstroke.html"
+                                        width="1000"
+                                        height="620"
+                                        type="text/html">
+                </object>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-2">
+            <div class="row">
+              <div class="col-lg-4 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Does Smoking increase risk of stroke?</h3>
+                <p>
+                <p class="fst-italic">
+                  What we observe from the graph
+                </p>
+                <ul>
+                  <li><i class="ri-check-double-line"></i> Our data suggests that smoking doesn't affect risk of stroke.</li>
+                  <li><i class="ri-check-double-line"></i> There could be a bias in the data, that there could be more people in the dataset that have never smoked, causing the result in the pie chart. </li>
+                </ul>
+                <p>
+                  Even though our data suggest otherwise, we know smoking increases risk of stroke and heart disease based on medical research.
+                </p>
+              </div>
+              <div class="col-lg-8 order-1 order-lg-2 text-center">
+                  <object data="assets/img/portfolio/smokingstatus.html"
+                                        width="850"
+                                        height="450"
+                                        type="text/html">
+                </object>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-3">
+            <div class="row">
+              <div class="col-lg-4 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Do glucose levels affects risk of stroke?</h3>
+                <p>
+                  What we observe in the graph
+                </p>
+                <ul>
+                  <li><i class="ri-check-double-line"></i> Our data shows that people with higher glucose levels are at higher risk of stroke</li>
+                  <li><i class="ri-check-double-line"></i>  Over time, high blood sugar from diabetes can damage blood vessels in the heart, brain, kidneys, and other organs, leading to heart attacks, kidney disease, and stroke. .</li>
+                </ul>
+                
+                
+               
+                <p class="fst-italic">
+                  
+                </p>
+              </div>
+              <div class="col-lg-8 order-1 order-lg-2 text-center">
+                <object data="assets/img/portfolio/glucosevsstroke.html"
+                                        width="1020"
+                                        height="550"
+                                        type="text/html">
+                  </object>
+              </div>
+            </div>
+          </div>
+          <div class="tab-pane" id="tab-4">
+            <div class="row">
+              <div class="col-lg-4 order-2 order-lg-1 mt-3 mt-lg-0">
+                <h3>Does a history of heart disease increases risk of Stroke?</h3>
+                <p class="fst-italic">
+                What we observe from the graph
+                </p>
+                <ul>
+                  <li><i class="ri-check-double-line"></i> We can see that people with previous heart disease have a higher chance of stroke
+
+                </ul>
+              </div>
+              <div class="col-lg-8 order-1 order-lg-2 text-center">
+                <object data="assets/img/portfolio/heartdiseasepie.html"
+                                        width="850"
+                                        height="450"
+                                        type="text/html">
+                   
+                  </object>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End Features Section -->
+
+
+
+    <!--=========== Timeline ============= -->
+
+    <!--=========== Timeline ============= -->
+    <section id="timeline1">
+      <div class="section-title">
+            <h2>Machine Learning Pipeline</h2>
+            <p>What is a Machine Learning Pipeline ? </p>
+            <font >What are machine learning pipelines? Pipelines are a simple way to keep the data preprocessing and modeling code organized. Specifically, a pipeline allows you to bundle the preprocessing and modeling steps into a single step using the make_pipeline() function. Some of the benefits of modeling with pipelines include a cleaner and organized code, fewer bugs, easier production, and the ability to avoid Data Leakage.</font>
+          </div>
+    </section>
+
+    <section id="timeline">
+      
+      <div class="container" data-aos="fade-up">
+        
+      </div>
+      <br>
+      <article>
+        <div class="inner">
+          <span class="date">
+            <span class="step">step1</span>
+          </span>
+          <h2>Data Cleaning & Feature Engineering</h2>
+          <p>To clean our data, we decided to remove the columns in the dataset that would not add value to the application’s decision making, such as the Residence Type and ID columns. We also tried to remove any outliers to ensure our machine learning model would be accurate. For example, in the column for gender type, there was only one row where the gender was defined as ‘Other’ so we made a decision to remove the row. Our features are gender, age, hypertension (high blood pressure), heart disease trend, marital status, work type, average glucose level, and BMI (body mass index). The target variable is if the person has had stroke or not. </p>
+        </div>
+      </article>
+      <article>
+        <div class="inner">
+          <span class="date">
+            <span class="step">step2</span>
+          </span>
+          <h2>Train - Test Split</h2>
+          <p>We had to split the dataset into two groups; training and testing datasets. 75% of the data went to the train group, where the system was taught to identify patterns and associations in order to give an accurate prediction. The other 25% of the data went to the test group, where it was used to evaluate the effectiveness of the training and the accuracy of the model.</p>
+        </div>
+      </article>
+      <article>
+        <div class="inner">
+          <span class="date">
+            <span class="step">step3</span>
+          </span>
+          <h2>Pipeline - Imputation and Encoding</h2>
+          <p>Imputation is a crucial step because our data set contains 5110 rows and we could not afford to delete the rows with null values, so we decided to use imputation and encoding to deal with these values. For the columns with numerical values, we found the mean of the column and imputed the mean value for the null values. For the categorical data, we found the mode string, or the most occurring string, and inputted that value for the null values. Once the null values were dealt with, we encoded our dataset using One Hot Encoder to make all the data numerical. 
+</p>
+        </div>
+      </article>
+      <article>
+        <div class="inner">
+          <span class="date">
+            <span class="step">step4</span>
+          </span>
+          <h2> Pipeline - Scaling and  Oversampling</h2>
+          <p>In order for the model to understand and learn the data faster, we scaled the encoded data to between 0 and 1. In our dataset, 95.7% of the data was ‘no stroke’ whereas only 4.26% of the data was ‘stroke’. This caused a significant imbalance in the dataframe and led to errors in the system output. To combat this problem, we oversampled the data using the SMOTE technique, in which synthetic samples were generated from the original dataset to add to the minority class, thus making the ‘stroke’ to ‘no stroke’ data closer to 50-50%. </p>
+        </div>
+      </article>
+      <article>
+        <div class="inner">
+          <span class="date">
+            <span class="step">step5</span>
+          </span>
+          <h2>Model Building </h2>
+          <p>To train our machine learning models we used several different machine learning algorithms such as Logistic Regression, K Nearest Neighbors, Random Forest, and Neural Network.
+</p>
+        </div>
+      </article>
+      <article>
+        <div class="inner">
+          <span class="date">
+            <span class="step">step6</span>
+          </span>
+          <h2>Fine tuning - Grid SearchCV</h2>
+          <p>To find the most accurate set of parameters, we used GrindSearchCV with preset values. This allowed us to quickly and effectively find the best set of parameters for our model without having to test each individual combination of values for each machine learning model.</p>
+        </div>
+      </article>
+    </section>
+    
+
+
+
+    <!-- ======= Models ======= -->    
+    <!-- More descriptions for models -->
+    <section id="services" class="services">
+<!--     <section id="services" class="team section-bg services"> -->
+      <div class="container aos-init aos-animate" data-aos="fade-up">
+        <div class="section-title">
+          <h2>Models</h2>
+          <p>Check our Models</p>
+        </div>
+        <div class="row gy-4">
+          <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-box green">
+              <i class="ri-discuss-line icon"></i>
+              <span class="iconify" data-icon="carbon:machine-learning-model"></span>
+              <h3>Random Forest</h3>
+              <p>The Random Forest algorithm is a method that is used to gain a higher accuracy rating by taking the majority output of an ensemble of models rather than just one. Because each individual model is slightly different from each other, the varying outputs allow the overall accuracy to increase as long as each model maintains above a 50% accuracy rating.</p>
+              <a href="random_forest.html" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-box blue">
+              <i class="ri-discuss-line icon"></i>
+              <h3>Neural Network</h3>
+              <p>The Neural Network algorithm is essentially a network of artificial neurons and nodes that mimic the operations of the human brain. In this machine learning process, called deep learning, the neurons pass input through multiple hidden layers, generating an output with both the input and output in binary form. Neural networks are used in artificial intelligence to recognize patterns and solve common problems.</p>
+              <a href="NeuralNetwork.html" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 aos-init aos-animate" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-box orange">
+              <i class="ri-discuss-line icon"></i>
+              <h3>Logistic Regression </h3>
+              <p>The Logistic Regression algorithm is a method that is used to predict a binary outcome, the appropriate regression analysis to decide between alternatives. Using prior observations on a data set, the model analyzes relationships between independent variables to predict a dependent variable. This model uses the Sigmoid function, also called a logistic function, which maps values between 0 and 1, and then classifies the value based on where it lies around the “S” shaped line, which represents logistic growth.</p>
+              <a href="Logistic_Regression.html" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+            </div>
+          </div>
+         </div>
+      </div>
+    </section>
+
+
+
+    <!-- ======= Predictions ======= -->
+ 
+
+    <!-- ======= Testimonials Section ======= -->
+
+    <section id="team" class="testimonials">
+      <div class="container" data-aos="zoom-in">
+        <div class="section-title2">
+          <h2>Team</h2>
+          <p>Meet our team</p>
+        </div>
+
+        <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/brayden.jpg" class="testimonial-img" alt="">
+                <h3>Brayden Borges</h3>
+                <h4>Group Member</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I am a upcoming Senior at James C Enochs High School, I worked on the AI model used on the website along with the connection between the website and said model. In my free time I enjoy coding, cybersecurity, and gaming.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/Landri.PNG" class="testimonial-img" alt="">
+                <h3>Landri Domingue</h3>
+                <h4>Group Member</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Currently a junior at Dutchtown High School. Worked on the website's main page and the AI model. When not competing in robotics or math competitions, I enjoy reading and swimming. I plan to pursue medical robotics and AI in the future. 
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/ryanpicture.png" class="testimonial-img" alt="">
+                <h3>Ryan Hung</h3>
+                <h4>Group Member</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  Rising Senior at Monta Vista High School. I worked on the AI model and development of the main page. In my free time, I like to read, go camping, or program!
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/shreya.jpg" class="testimonial-img" alt="">
+                <h3>Shreya Vora</h3>
+                <h4>Group Member</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I am currently an upcoming senior at Silver Creek High School. I enjoyed working on the plots and the machine learning pipeline. In my free time I enjoy reading, baking, and robotics.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/mir.png" class="testimonial-img" alt="">
+                <h3>Mir Majumdar</h3>
+                <h4>Group Member</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I am currently an upcoming junior at Aragon High School. I worked on developing the AI model and the main page. Outside my strong interest in the STEM field, I enjoy playing basketball, listening to music, going to the gym, and reading.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+            <div class="swiper-slide">
+              <div class="testimonial-item">
+                <img src="assets/img/testimonials/diego.jpg" class="testimonial-img" alt="">
+                <h3>Diego Zazueta</h3>
+                <h4>Group Member</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  I am a rising junior at San Dimas High School. I worked on the main page and the data visualizations. I play water polo and swim for my school. In my free time I like to do art, go to the gym, and work on interesting coding projects.
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div><!-- End testimonial item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div>
+    </section><!-- End Testimonials Section -->
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer">
+    <div class="container">
+      <div class="copyright">
+        &copy; Copyright <strong><span>AI Camp</span></strong>. All Rights Reserved
+      </div>
+      <div class="credits">
+        <!-- All the links in the footer should remain intact. -->
+        <!-- You can delete the links only if you purchased the pro version. -->
+        <!-- Licensing information: https://bootstrapmade.com/license/ -->
+        <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/dewi-free-multi-purpose-html-template/ -->
+        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+      </div>
+    </div>
+  </footer><!-- End Footer -->
+
+  <div id="preloader"></div>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/purecounter/purecounter.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
